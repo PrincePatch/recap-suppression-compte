@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Recap — Privacy Policy / Politique de confidentialité</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0; background: #07090F; color: #E8ECF4;
+    font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .enveloppe { max-width: 760px; margin: 0 auto; padding: 24px 20px 64px; }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 30px 0 8px; color: #46E3C3; }
+  .marque { color: #7A7BFF; font-weight: 600; }
+  a { color: #46E3C3; }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin-top: 8px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.10); vertical-align: top; }
+  th { color: #9AA3B2; font-weight: 600; }
+  .discret { color: #9AA3B2; font-size: 14px; }
+  .bascule { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 8px; }
+  .bascule button {
+    background: rgba(255,255,255,0.05); color: #9AA3B2; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.14); border-radius: 999px;
+    padding: 6px 14px; font-size: 13px; font-weight: 600;
+  }
+  .bascule button[aria-current="true"] { color: #07090F; background: #46E3C3; border-color: #46E3C3; }
+</style>
+</head>
+<body>
+<div class="enveloppe">
+  <div class="bascule">
+    <button id="btn-fr" type="button" onclick="setLang('fr')">Français</button>
+    <button id="btn-en" type="button" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <section id="contenu-en">
+    <h1>Privacy Policy</h1>
+    <p class="discret">App <span class="marque">Recap</span> — published by Florian Thibault.<br/>
+    Last updated: 16 June 2026.</p>
+
+    <p>This policy explains what data <span class="marque">Recap</span> processes, why, who it
+    is shared with, and how long it is kept. Recap turns your videos/audio into transcripts,
+    summaries, study cards and a chat assistant.</p>
+
+    <h2>1. Who we are</h2>
+    <p>Data controller: Florian Thibault. Contact:
+    <a href="mailto:support.app.bv@gmail.com">support.app.bv@gmail.com</a>.</p>
+
+    <h2>2. Data we process</h2>
+    <table>
+      <tr><th>Data</th><th>Why</th><th>Stored where</th></tr>
+      <tr><td>Name, email, user ID (via Google Sign-In)</td><td>Authentication, account management</td><td>Our server (Supabase)</td></tr>
+      <tr><td>Purchase history (subscription, status)</td><td>Unlock paid plan, fraud prevention</td><td>Our server (Supabase), RevenueCat, Google Play</td></tr>
+      <tr><td>Audio extracted from your media</td><td>Speech-to-text transcription</td><td>Sent to Groq, processed in real time, <strong>not stored</strong></td></tr>
+      <tr><td>Transcript text (when you use AI features)</td><td>Summaries, study cards, chat</td><td>Sent to Google (Gemini), processed in real time, <strong>not stored on server</strong></td></tr>
+      <tr><td>App usage (transcription counts, quotas)</td><td>Enforce plan limits, anti-abuse</td><td>Our server (Supabase)</td></tr>
+      <tr><td>Device / installation identifier</td><td>Purchase validation, fraud prevention (RevenueCat)</td><td>RevenueCat</td></tr>
+      <tr><td>Your content: transcripts, summaries, cards, chat, thumbnails, imported media</td><td>Core app features</td><td><strong>Only on your device</strong> — never sent to our servers</td></tr>
+    </table>
+
+    <h2>3. Service providers</h2>
+    <p>We use the following processors, acting on our behalf: <strong>Supabase</strong> (auth,
+    database), <strong>Groq</strong> (transcription), <strong>Google / Gemini</strong> (AI
+    summaries, cards, chat), <strong>RevenueCat</strong> and <strong>Google Play Billing</strong>
+    (subscriptions). We do <strong>not</strong> sell your data and we do <strong>not</strong> use
+    it for advertising. The app contains <strong>no ads and no advertising identifier</strong>.</p>
+
+    <h2>4. Retention</h2>
+    <ul>
+      <li>Account, profile, subscription and usage data: kept while your account exists; deleted on request.</li>
+      <li>Audio and transcript content sent for processing: not stored on our servers (processed in real time).</li>
+      <li>Your content stays on your device and is removed when you delete it or uninstall the app.</li>
+      <li>Purchase/billing records: kept by Google Play and RevenueCat for legal/accounting reasons (typically up to 10 years), outside our direct control.</li>
+    </ul>
+
+    <h2>5. Account &amp; data deletion</h2>
+    <p>In the app: <strong>Observatory</strong> tab → <strong>Account</strong> → <strong>“Delete account”</strong>.
+    Or email <a href="mailto:support.app.bv@gmail.com">support.app.bv@gmail.com</a>. Full procedure:
+    <a href="https://princepatch.github.io/recap-suppression-compte/">account deletion page</a>.</p>
+
+    <h2>6. Your rights</h2>
+    <p>You can request access, correction or deletion of your data, or object to processing, by
+    contacting <a href="mailto:support.app.bv@gmail.com">support.app.bv@gmail.com</a>.</p>
+
+    <h2>7. Children</h2>
+    <p>Recap is not directed at children under 13 and we do not knowingly collect their data.</p>
+
+    <h2>8. Changes</h2>
+    <p>We may update this policy; the date above reflects the latest version.</p>
+
+    <p class="discret">Contact: <a href="mailto:support.app.bv@gmail.com">support.app.bv@gmail.com</a></p>
+  </section>
+
+  <!-- ===================== FRANÇAIS ===================== -->
+  <section id="contenu-fr">
+    <h1>Politique de confidentialité</h1>
+    <p class="discret">Application <span class="marque">Recap</span> — éditée par Florian Thibault.<br/>
+    Dernière mise à jour : 16 juin 2026.</p>
+
+    <p>Cette politique explique quelles données <span class="marque">Recap</span> traite, pourquoi,
+    avec qui elles sont partagées et combien de temps elles sont conservées. Recap transforme vos
+    vidéos/audios en transcriptions, résumés, fiches de révision et assistant de discussion.</p>
+
+    <h2>1. Qui sommes-nous</h2>
+    <p>Responsable du traitement : Florian Thibault. Contact :
+    <a href="mailto:support.app.bv@gmail.com">support.app.bv@gmail.com</a>.</p>
+
+    <h2>2. Données traitées</h2>
+    <table>
+      <tr><th>Donnée</th><th>Pourquoi</th><th>Stockée où</th></tr>
+      <tr><td>Nom, e-mail, ID utilisateur (via Google Sign-In)</td><td>Authentification, gestion du compte</td><td>Notre serveur (Supabase)</td></tr>
+      <tr><td>Historique des achats (abonnement, statut)</td><td>Débloquer le plan payant, anti-fraude</td><td>Serveur (Supabase), RevenueCat, Google Play</td></tr>
+      <tr><td>Audio extrait de vos médias</td><td>Transcription parole-vers-texte</td><td>Envoyé à Groq, traité en temps réel, <strong>non stocké</strong></td></tr>
+      <tr><td>Texte du transcript (si vous utilisez l'IA)</td><td>Résumés, fiches, chat</td><td>Envoyé à Google (Gemini), traité en temps réel, <strong>non stocké côté serveur</strong></td></tr>
+      <tr><td>Usage de l'app (nombre de transcriptions, quotas)</td><td>Appliquer les limites du plan, anti-abus</td><td>Notre serveur (Supabase)</td></tr>
+      <tr><td>Identifiant d'appareil / d'installation</td><td>Validation des achats, anti-fraude (RevenueCat)</td><td>RevenueCat</td></tr>
+      <tr><td>Vos contenus : transcriptions, résumés, fiches, chat, vignettes, médias importés</td><td>Fonctions principales</td><td><strong>Uniquement sur votre appareil</strong> — jamais envoyés à nos serveurs</td></tr>
+    </table>
+
+    <h2>3. Sous-traitants</h2>
+    <p>Nous utilisons les sous-traitants suivants, agissant pour notre compte : <strong>Supabase</strong>
+    (auth, base de données), <strong>Groq</strong> (transcription), <strong>Google / Gemini</strong>
+    (résumés, fiches, chat IA), <strong>RevenueCat</strong> et <strong>Google Play Billing</strong>
+    (abonnements). Nous ne <strong>vendons pas</strong> vos données et ne les utilisons <strong>pas</strong>
+    à des fins publicitaires. L'app ne contient <strong>aucune publicité ni identifiant publicitaire</strong>.</p>
+
+    <h2>4. Conservation</h2>
+    <ul>
+      <li>Compte, profil, abonnement et usage : conservés tant que le compte existe ; supprimés sur demande.</li>
+      <li>Audio et transcript envoyés pour traitement : non stockés sur nos serveurs (traités en temps réel).</li>
+      <li>Vos contenus restent sur votre appareil et sont supprimés quand vous les effacez ou désinstallez l'app.</li>
+      <li>Enregistrements d'achat : conservés par Google Play et RevenueCat pour obligations légales/comptables (jusqu'à ~10 ans), hors de notre contrôle direct.</li>
+    </ul>
+
+    <h2>5. Suppression du compte et des données</h2>
+    <p>Dans l'app : onglet <strong>Observatoire</strong> → <strong>Compte</strong> → <strong>« Supprimer le compte »</strong>.
+    Ou par e-mail à <a href="mailto:support.app.bv@gmail.com">support.app.bv@gmail.com</a>. Procédure complète :
+    <a href="https://princepatch.github.io/recap-suppression-compte/">page de suppression de compte</a>.</p>
+
+    <h2>6. Vos droits</h2>
+    <p>Vous pouvez demander l'accès, la rectification ou la suppression de vos données, ou vous opposer
+    au traitement, en écrivant à <a href="mailto:support.app.bv@gmail.com">support.app.bv@gmail.com</a>.</p>
+
+    <h2>7. Enfants</h2>
+    <p>Recap ne s'adresse pas aux enfants de moins de 13 ans et nous ne collectons pas sciemment leurs données.</p>
+
+    <h2>8. Modifications</h2>
+    <p>Cette politique peut évoluer ; la date ci-dessus indique la dernière version.</p>
+
+    <p class="discret">Contact : <a href="mailto:support.app.bv@gmail.com">support.app.bv@gmail.com</a></p>
+  </section>
+</div>
+
+<script>
+  // Bascule de langue. Anglais par défaut ; bouton « Français » pour basculer.
+  // Sans JavaScript, les deux sections restent visibles (repli sûr).
+  function setLang(l) {
+    document.documentElement.lang = l;
+    document.getElementById('contenu-fr').style.display = (l === 'fr') ? 'block' : 'none';
+    document.getElementById('contenu-en').style.display = (l === 'en') ? 'block' : 'none';
+    document.getElementById('btn-fr').setAttribute('aria-current', l === 'fr');
+    document.getElementById('btn-en').setAttribute('aria-current', l === 'en');
+    document.title = (l === 'fr')
+      ? 'Recap — Politique de confidentialité'
+      : 'Recap — Privacy Policy';
+  }
+  setLang('en');
+</script>
+</body>
+</html>
