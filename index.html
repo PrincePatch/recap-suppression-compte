@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Recap — Suppression du compte et des données</title>
+<title>Recap — Suppression du compte / Account deletion</title>
 <style>
   :root { color-scheme: dark; }
   body {
@@ -11,7 +11,7 @@
     font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
   }
-  .enveloppe { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+  .enveloppe { max-width: 720px; margin: 0 auto; padding: 24px 20px 64px; }
   h1 { font-size: 26px; margin: 0 0 4px; }
   h2 { font-size: 19px; margin: 32px 0 8px; color: #46E3C3; }
   .marque { color: #7A7BFF; font-weight: 600; }
@@ -26,87 +26,158 @@
   table { border-collapse: collapse; width: 100%; margin-top: 8px; }
   th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.10); vertical-align: top; }
   th { color: #9AA3B2; font-weight: 600; }
-  hr { border: none; border-top: 1px solid rgba(255,255,255,0.10); margin: 40px 0; }
+  .bascule { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 8px; }
+  .bascule button {
+    background: rgba(255,255,255,0.05); color: #9AA3B2; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.14); border-radius: 999px;
+    padding: 6px 14px; font-size: 13px; font-weight: 600;
+  }
+  .bascule button[aria-current="true"] {
+    color: #07090F; background: #46E3C3; border-color: #46E3C3;
+  }
 </style>
 </head>
 <body>
 <div class="enveloppe">
-  <h1>Suppression du compte et des données</h1>
-  <p class="discret">Application <span class="marque">Recap</span> — éditée par Florian Thibault.</p>
-
-  <p>Cette page explique comment demander la suppression de votre compte
-  <span class="marque">Recap</span> et des données associées, et précise les
-  données supprimées, celles conservées et leur durée de conservation.</p>
-
-  <h2>Méthode 1 — Depuis l'application (immédiat)</h2>
-  <div class="carte">
-    <ol>
-      <li>Ouvrez <strong>Recap</strong> et connectez-vous avec votre compte Google.</li>
-      <li>Allez dans l'onglet <strong>Observatoire</strong> (icône ◐, en bas à droite).</li>
-      <li>Dans la carte <strong>Compte</strong>, touchez <strong>« Supprimer le compte »</strong>.</li>
-      <li>Confirmez. Votre compte et vos données serveur sont supprimés
-      <strong>immédiatement et définitivement</strong>.</li>
-    </ol>
+  <div class="bascule">
+    <button id="btn-fr" type="button" onclick="setLang('fr')">Français</button>
+    <button id="btn-en" type="button" onclick="setLang('en')">English</button>
   </div>
 
-  <h2>Méthode 2 — Par e-mail (sans l'application)</h2>
-  <div class="carte">
-    <p>Écrivez à
-    <a href="mailto:florian@thibault.tel?subject=Suppression%20de%20compte%20Recap">florian@thibault.tel</a>
-    avec pour objet <strong>« Suppression de compte Recap »</strong>, depuis (ou en
-    indiquant) <strong>l'adresse Google utilisée dans l'app</strong>, afin que nous
-    puissions identifier votre compte.</p>
-    <p class="discret">Délai de traitement : sous <strong>30 jours</strong> maximum
-    (généralement sous 72 h). Une confirmation vous est envoyée une fois la
-    suppression effectuée.</p>
-  </div>
+  <!-- ===================== FRANÇAIS ===================== -->
+  <section id="contenu-fr">
+    <h1>Suppression du compte et des données</h1>
+    <p class="discret">Application <span class="marque">Recap</span> — éditée par Florian Thibault.</p>
 
-  <h2>Données supprimées</h2>
-  <table>
-    <tr><th>Donnée</th><th>Où</th><th>Quand</th></tr>
-    <tr><td>Compte (identité d'authentification Google)</td><td>Serveur (Supabase)</td><td>À la demande, immédiat</td></tr>
-    <tr><td>Profil et abonnement (plan, statut)</td><td>Serveur (Supabase)</td><td>À la demande, immédiat</td></tr>
-    <tr><td>Journal d'utilisation (quotas, compteurs)</td><td>Serveur (Supabase)</td><td>À la demande, immédiat</td></tr>
-    <tr><td>Contenus : transcriptions, fiches, résumés, conversations, vignettes</td><td>Uniquement sur votre appareil</td><td>À la désinstallation de l'app, ou via l'app</td></tr>
-  </table>
-  <p class="discret">Vos contenus (vidéos/audios importés, transcriptions, fiches,
-  résumés, chat) sont stockés <strong>uniquement en local sur votre appareil</strong> ;
-  ils ne sont jamais conservés sur nos serveurs. Les fichiers source ne sont jamais
-  conservés (supprimés après extraction).</p>
+    <p>Cette page explique comment demander la suppression de votre compte
+    <span class="marque">Recap</span> et des données associées, et précise les
+    données supprimées, celles conservées et leur durée de conservation.</p>
 
-  <h2>Données conservées et durées</h2>
-  <ul>
-    <li><strong>Enregistrements d'achat / facturation</strong> : conservés par
-    <strong>Google Play</strong> et par notre prestataire de paiement
-    (RevenueCat) pour des obligations légales et comptables — typiquement
-    jusqu'à <strong>10 ans</strong>. Ces enregistrements sont hors de notre contrôle
-    direct et ne sont pas supprimés par la demande ci-dessus.</li>
-    <li><strong>Aucun contenu</strong> (transcription, fiche, résumé, message)
-    n'est conservé côté serveur après suppression — ces données ne quittent
-    jamais votre appareil.</li>
-  </ul>
+    <h2>Méthode 1 — Depuis l'application (immédiat)</h2>
+    <div class="carte">
+      <ol>
+        <li>Ouvrez <strong>Recap</strong> et connectez-vous avec votre compte Google.</li>
+        <li>Allez dans l'onglet <strong>Observatoire</strong> (icône ◐, en bas à droite).</li>
+        <li>Dans la carte <strong>Compte</strong>, touchez <strong>« Supprimer le compte »</strong>.</li>
+        <li>Confirmez. Votre compte et vos données serveur sont supprimés
+        <strong>immédiatement et définitivement</strong>.</li>
+      </ol>
+    </div>
 
-  <hr />
+    <h2>Méthode 2 — Par e-mail (sans l'application)</h2>
+    <div class="carte">
+      <p>Écrivez à
+      <a href="mailto:florian@thibault.tel?subject=Suppression%20de%20compte%20Recap">florian@thibault.tel</a>
+      avec pour objet <strong>« Suppression de compte Recap »</strong>, depuis (ou en
+      indiquant) <strong>l'adresse Google utilisée dans l'app</strong>, afin que nous
+      puissions identifier votre compte.</p>
+      <p class="discret">Délai de traitement : sous <strong>30 jours</strong> maximum
+      (généralement sous 72 h). Une confirmation vous est envoyée une fois la
+      suppression effectuée.</p>
+    </div>
 
-  <h1>Account &amp; data deletion</h1>
-  <p class="discret">App <span class="marque">Recap</span> — published by Florian Thibault.</p>
-  <p>To delete your <span class="marque">Recap</span> account and associated data:</p>
-  <ul>
-    <li><strong>In the app:</strong> open Recap → <strong>Observatory</strong> tab →
-    <strong>Account</strong> card → <strong>“Delete account”</strong> → confirm.
-    Server-side data is deleted immediately.</li>
-    <li><strong>By email:</strong> contact
-    <a href="mailto:florian@thibault.tel?subject=Recap%20account%20deletion">florian@thibault.tel</a>
-    from (or stating) the Google address used in the app. Processed within
-    <strong>30 days</strong> (usually under 72 h).</li>
-  </ul>
-  <p><strong>Deleted:</strong> account, profile, subscription, usage log (server).
-  Content (transcripts, cards, summaries, chat) is stored <strong>only on your
-  device</strong> and removed on uninstall or from the app.<br/>
-  <strong>Retained:</strong> purchase/billing records kept by Google Play and the
-  payment provider for legal/accounting reasons (typically up to 10 years).</p>
+    <h2>Données supprimées</h2>
+    <table>
+      <tr><th>Donnée</th><th>Où</th><th>Quand</th></tr>
+      <tr><td>Compte (identité d'authentification Google)</td><td>Serveur (Supabase)</td><td>À la demande, immédiat</td></tr>
+      <tr><td>Profil et abonnement (plan, statut)</td><td>Serveur (Supabase)</td><td>À la demande, immédiat</td></tr>
+      <tr><td>Journal d'utilisation (quotas, compteurs)</td><td>Serveur (Supabase)</td><td>À la demande, immédiat</td></tr>
+      <tr><td>Contenus : transcriptions, fiches, résumés, conversations, vignettes</td><td>Uniquement sur votre appareil</td><td>À la désinstallation de l'app, ou via l'app</td></tr>
+    </table>
+    <p class="discret">Vos contenus (vidéos/audios importés, transcriptions, fiches,
+    résumés, chat) sont stockés <strong>uniquement en local sur votre appareil</strong> ;
+    ils ne sont jamais conservés sur nos serveurs. Les fichiers source ne sont jamais
+    conservés (supprimés après extraction).</p>
 
-  <p class="discret">Contact : <a href="mailto:florian@thibault.tel">florian@thibault.tel</a></p>
+    <h2>Données conservées et durées</h2>
+    <ul>
+      <li><strong>Enregistrements d'achat / facturation</strong> : conservés par
+      <strong>Google Play</strong> et par notre prestataire de paiement
+      (RevenueCat) pour des obligations légales et comptables — typiquement
+      jusqu'à <strong>10 ans</strong>. Ces enregistrements sont hors de notre contrôle
+      direct et ne sont pas supprimés par la demande ci-dessus.</li>
+      <li><strong>Aucun contenu</strong> (transcription, fiche, résumé, message)
+      n'est conservé côté serveur après suppression — ces données ne quittent
+      jamais votre appareil.</li>
+    </ul>
+
+    <p class="discret">Contact : <a href="mailto:florian@thibault.tel">florian@thibault.tel</a></p>
+  </section>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <section id="contenu-en">
+    <h1>Account &amp; data deletion</h1>
+    <p class="discret">App <span class="marque">Recap</span> — published by Florian Thibault.</p>
+
+    <p>This page explains how to request deletion of your
+    <span class="marque">Recap</span> account and associated data, and details which
+    data is deleted, which is retained, and for how long.</p>
+
+    <h2>Option 1 — From the app (immediate)</h2>
+    <div class="carte">
+      <ol>
+        <li>Open <strong>Recap</strong> and sign in with your Google account.</li>
+        <li>Go to the <strong>Observatory</strong> tab (◐ icon, bottom right).</li>
+        <li>In the <strong>Account</strong> card, tap <strong>“Delete account”</strong>.</li>
+        <li>Confirm. Your account and server-side data are deleted
+        <strong>immediately and permanently</strong>.</li>
+      </ol>
+    </div>
+
+    <h2>Option 2 — By email (without the app)</h2>
+    <div class="carte">
+      <p>Email
+      <a href="mailto:florian@thibault.tel?subject=Recap%20account%20deletion">florian@thibault.tel</a>
+      with the subject <strong>“Recap account deletion”</strong>, from (or stating)
+      <strong>the Google address used in the app</strong> so we can identify your account.</p>
+      <p class="discret">Processing time: within <strong>30 days</strong> maximum
+      (usually under 72 h). You receive a confirmation once deletion is complete.</p>
+    </div>
+
+    <h2>Data deleted</h2>
+    <table>
+      <tr><th>Data</th><th>Where</th><th>When</th></tr>
+      <tr><td>Account (Google authentication identity)</td><td>Server (Supabase)</td><td>On request, immediate</td></tr>
+      <tr><td>Profile and subscription (plan, status)</td><td>Server (Supabase)</td><td>On request, immediate</td></tr>
+      <tr><td>Usage log (quotas, counters)</td><td>Server (Supabase)</td><td>On request, immediate</td></tr>
+      <tr><td>Content: transcripts, study cards, summaries, conversations, thumbnails</td><td>On your device only</td><td>On app uninstall, or from the app</td></tr>
+    </table>
+    <p class="discret">Your content (imported video/audio, transcripts, cards,
+    summaries, chat) is stored <strong>only locally on your device</strong>; it is never
+    kept on our servers. Source files are never kept (deleted after extraction).</p>
+
+    <h2>Data retained and durations</h2>
+    <ul>
+      <li><strong>Purchase / billing records</strong>: kept by <strong>Google Play</strong>
+      and by our payment provider (RevenueCat) for legal and accounting obligations —
+      typically up to <strong>10 years</strong>. These records are outside our direct
+      control and are not removed by the request above.</li>
+      <li><strong>No content</strong> (transcript, card, summary, message) is retained
+      server-side after deletion — this data never leaves your device.</li>
+    </ul>
+
+    <p class="discret">Contact: <a href="mailto:florian@thibault.tel">florian@thibault.tel</a></p>
+  </section>
 </div>
+
+<script>
+  // Bascule de langue. Choix initial = langue du navigateur (FR si français,
+  // EN sinon), comme l'app. Sans JavaScript, les deux sections restent
+  // visibles (repli sûr).
+  function setLang(l) {
+    document.documentElement.lang = l;
+    document.getElementById('contenu-fr').style.display = (l === 'fr') ? 'block' : 'none';
+    document.getElementById('contenu-en').style.display = (l === 'en') ? 'block' : 'none';
+    document.getElementById('btn-fr').setAttribute('aria-current', l === 'fr');
+    document.getElementById('btn-en').setAttribute('aria-current', l === 'en');
+    document.title = (l === 'fr')
+      ? 'Recap — Suppression du compte et des données'
+      : 'Recap — Account & data deletion';
+  }
+  (function () {
+    var nav = (navigator.language || 'en').toLowerCase();
+    setLang(nav.indexOf('fr') === 0 ? 'fr' : 'en');
+  })();
+</script>
 </body>
 </html>
