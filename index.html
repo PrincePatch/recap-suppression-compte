@@ -67,7 +67,7 @@
     <h2>Méthode 2 — Par e-mail (sans l'application)</h2>
     <div class="carte">
       <p>Écrivez à
-      <a href="mailto:florian@thibault.tel?subject=Suppression%20de%20compte%20Recap">florian@thibault.tel</a>
+      <a href="mailto:support.app.bv@gmail.com?subject=Suppression%20de%20compte%20Recap">support.app.bv@gmail.com</a>
       avec pour objet <strong>« Suppression de compte Recap »</strong>, depuis (ou en
       indiquant) <strong>l'adresse Google utilisée dans l'app</strong>, afin que nous
       puissions identifier votre compte.</p>
@@ -101,7 +101,7 @@
       jamais votre appareil.</li>
     </ul>
 
-    <p class="discret">Contact : <a href="mailto:florian@thibault.tel">florian@thibault.tel</a></p>
+    <p class="discret">Contact : <a href="mailto:support.app.bv@gmail.com">support.app.bv@gmail.com</a></p>
   </section>
 
   <!-- ===================== ENGLISH ===================== -->
@@ -127,7 +127,7 @@
     <h2>Option 2 — By email (without the app)</h2>
     <div class="carte">
       <p>Email
-      <a href="mailto:florian@thibault.tel?subject=Recap%20account%20deletion">florian@thibault.tel</a>
+      <a href="mailto:support.app.bv@gmail.com?subject=Recap%20account%20deletion">support.app.bv@gmail.com</a>
       with the subject <strong>“Recap account deletion”</strong>, from (or stating)
       <strong>the Google address used in the app</strong> so we can identify your account.</p>
       <p class="discret">Processing time: within <strong>30 days</strong> maximum
@@ -156,14 +156,14 @@
       server-side after deletion — this data never leaves your device.</li>
     </ul>
 
-    <p class="discret">Contact: <a href="mailto:florian@thibault.tel">florian@thibault.tel</a></p>
+    <p class="discret">Contact: <a href="mailto:support.app.bv@gmail.com">support.app.bv@gmail.com</a></p>
   </section>
 </div>
 
 <script>
-  // Bascule de langue. Choix initial = langue du navigateur (FR si français,
-  // EN sinon), comme l'app. Sans JavaScript, les deux sections restent
-  // visibles (repli sûr).
+  // Bascule de langue. Choix initial = ANGLAIS par défaut ; le bouton
+  // « Français » permet de basculer. Sans JavaScript, les deux sections
+  // restent visibles (repli sûr).
   function setLang(l) {
     document.documentElement.lang = l;
     document.getElementById('contenu-fr').style.display = (l === 'fr') ? 'block' : 'none';
@@ -174,10 +174,7 @@
       ? 'Recap — Suppression du compte et des données'
       : 'Recap — Account & data deletion';
   }
-  (function () {
-    var nav = (navigator.language || 'en').toLowerCase();
-    setLang(nav.indexOf('fr') === 0 ? 'fr' : 'en');
-  })();
+  setLang('en');
 </script>
 </body>
 </html>
